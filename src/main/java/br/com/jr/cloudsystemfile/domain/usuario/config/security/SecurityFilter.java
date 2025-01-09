@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Optional;
 
 
@@ -33,10 +34,13 @@ public class SecurityFilter extends OncePerRequestFilter {
         if (token != null) {
 
             var email = tokenService.validateToken(token);
-            UserDetails user = authorizationService.loadUserByUsername(email);
 
-            var authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+            if (Objects.nonNull(email) && !email.isEmpty()) {
+                UserDetails user = authorizationService.loadUserByUsername(email);
+
+                var authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
 
         }
 
