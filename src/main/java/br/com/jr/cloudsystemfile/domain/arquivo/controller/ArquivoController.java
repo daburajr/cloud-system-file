@@ -2,7 +2,6 @@ package br.com.jr.cloudsystemfile.domain.arquivo.controller;
 
 
 import br.com.jr.cloudsystemfile.domain.arquivo.service.ArquivoService;
-import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
