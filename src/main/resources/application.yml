@@ -1,0 +1,17 @@
+# PROD
+spring:
+  profiles:
+    active: prod
+  application:
+    name: cloudsystemfile
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+server:
+  servlet:
+    context-path: /api
+  port: 8081
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:my-secret-key}
