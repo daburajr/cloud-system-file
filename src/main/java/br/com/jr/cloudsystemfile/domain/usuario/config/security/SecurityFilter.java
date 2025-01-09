@@ -43,13 +43,6 @@ public class SecurityFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private boolean requestIsEqualCompanyToken(HttpServletRequest request, String token) {
-        var enterpriseToken = tokenService.getEnterprise(token);
-        String valueRequest = Optional.ofNullable(request.getHeader("x-tenant-id")).orElse("0");
-        var enterpriseRequest = valueRequest.isEmpty() ? 0 : Integer.parseInt(valueRequest);
-        return enterpriseRequest == enterpriseToken;
-    }
-
     private String recoverToken(HttpServletRequest request) {
         var authHeader = request.getHeader("Authorization");
         if (authHeader == null) return null;
