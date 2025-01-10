@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "63b0e885-0226-43ad-a98c-263cfab1038d",
+		"name": "cloudsystemfile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34428850"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "/api/auth/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@admin\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PROD}}/api/v1/auth/login",
+							"host": [
+								"{{PROD}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "file",
+			"item": [
+				{
+					"name": "/api/files/upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjbG91ZHN5c3RlbWZpbGUiLCJzdWIiOiJhZG1pbkBhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJleHAiOjE3MzY1MDE4MTN9.MoKeZiwjTw-Q3yM_TrpGvPspM5Dw_T8RA2jIyJ_M_ag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/jock/Desktop/package-info.java"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{PROD}}/api/v1/files/upload",
+							"host": [
+								"{{PROD}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/files/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjbG91ZHN5c3RlbWZpbGUiLCJzdWIiOiJhZG1pbkBhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJleHAiOjE3MzY0OTY4ODl9.jH3ETM3hJMHDxXrnu5QeSZ3cIPgdhCf8NxN_WrfUX3Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{PROD}}/api/v1/files/delete/package-info.java",
+							"host": [
+								"{{PROD}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"delete",
+								"package-info.java"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/files/download",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjbG91ZHN5c3RlbWZpbGUiLCJzdWIiOiJhZG1pbkBhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJleHAiOjE3MzY0OTcwMDB9.zR-qhUF52fMPSdqeFN8MGgdav3hDjgIIlkV35OwKrSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{PROD}}/api/v1/files/download/package-info.java",
+							"host": [
+								"{{PROD}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"download",
+								"package-info.java"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/files",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjbG91ZHN5c3RlbWZpbGUiLCJzdWIiOiJhZG1pbkBhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJleHAiOjE3MzY0OTcwMDB9.zR-qhUF52fMPSdqeFN8MGgdav3hDjgIIlkV35OwKrSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{PROD}}/api/v1/files",
+							"host": [
+								"{{PROD}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "PROD",
+			"value": "http://ec2-3-83-248-88.compute-1.amazonaws.com:8081",
+			"type": "string"
+		},
+		{
+			"key": "DEV",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	]
+}
