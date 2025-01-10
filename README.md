@@ -20,6 +20,16 @@
 * [x] Conceitos do REST;
 * [x] Tratamentos de Erros (Controller Advice);
 * [X] Testes de Unidade na camada de servico;
+* [ ] Adicionar a Camada de Pesistência com Mybatis
+* [ ] Dockerzirar
+* [ ] Testes de Integração
+* [ ] Implementar logs e monitoramento usando AWS CloudWatch;
+* [ ] Configurar um pipeline de CI/CD para deploy automático usando AWS CodePipeline ou GitHub Actions;
+* [ ] Usar VPC 
+* [ ] Criar um Usuário IAM p/ acessar recursos espeficios da AWS (Nao Utilizar o Root)
+* [ ] Criar uma policy para de Acesso do Usuario zup p/ acesso do S3 e EC2
+* [ ] Ajustar scripts terraform para contemplar as melhorias de segurança na AWS
+
 
 ### 3. Tecnologias 
 
