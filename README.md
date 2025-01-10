@@ -35,9 +35,15 @@
 1. Provisionando BucketS3
    1. Altere os valores do arquivo variables.tf em **/src/main/resources/terraform/buckets3/variables
    2. Execute o script localizado em **/src/main/resources/terraform/buckets3/main
+      ```shell
+        terraform init && terraform apply --auto-approve
+      ```
 2. Provisionando EC2
-    1. Altere os valores do arquivo variables.tf em **/src/main/resources/terraform/ec2/variables
-    2. Execute o script localizado em **/src/main/resources/terraform/ec2/main
+   1. Altere os valores do arquivo variables.tf em **/src/main/resources/terraform/ec2/variables
+   2. Execute o script localizado em **/src/main/resources/terraform/ec2/main
+     ```shell
+       terraform init && terraform apply --auto-approve
+     ```
 
 ### 6. Fazendo o Deploy do Jar
 1. Gere o Artefato Jar 
